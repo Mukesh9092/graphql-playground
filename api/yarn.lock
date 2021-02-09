@@ -289,15 +289,17 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/node@7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.2.2.tgz#1557dd23545b38d7b1d030a9c0e8fb225dbf70ab"
-  integrity sha512-jPqgTycE26uFsuWpLika9Ohz9dmLQHWjOnMNxBOjYb1HXO+eLKxEr5FfKSXH/tBvFwwaw+pzke3gagnurGOfCA==
+"@babel/node@7.12.13":
+  version "7.12.13"
+  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.12.13.tgz#76f30524f0aabdcc10c7beff9cc63c0e9ae2f46e"
+  integrity sha512-ACLDLxlNsJZxPnwSSwuXp87KwjKY0NAFko6QCnBjJlxd+gKUDLLG0Y49jO+/EwqMJd9D5/BkYn5Qb1bgrYnHSA==
   dependencies:
-    "@babel/polyfill" "^7.0.0"
-    "@babel/register" "^7.0.0"
-    commander "^2.8.1"
-    lodash "^4.17.10"
+    "@babel/register" "^7.12.13"
+    commander "^4.0.1"
+    core-js "^3.2.1"
+    lodash "^4.17.19"
+    node-environment-flags "^1.0.5"
+    regenerator-runtime "^0.13.4"
     v8flags "^3.1.1"
 
 "@babel/parser@^7.4.0", "@babel/parser@^7.4.3":
@@ -623,14 +625,6 @@
     "@babel/helper-regex" "^7.4.4"
     regexpu-core "^4.5.4"
 
-"@babel/polyfill@^7.0.0":
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.4.3.tgz#332dc6f57b718017c3a8b37b4eea8aa6eeac1187"
-  integrity sha512-rkv8WIvJshA5Ev8iNMGgz5WZkRtgtiPexiT7w5qevGTuT7ZBfM3de9ox1y9JR5/OXb/sWGBbWlHNa7vQKqku3Q==
-  dependencies:
-    core-js "^2.6.5"
-    regenerator-runtime "^0.13.2"
-
 "@babel/preset-env@7.4.4":
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.4.4.tgz#b6f6825bfb27b3e1394ca3de4f926482722c1d6f"
@@ -697,17 +691,16 @@
     pirates "^4.0.0"
     source-map-support "^0.5.9"
 
-"@babel/register@^7.0.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.4.0.tgz#d9d0a621db268fb14200f2685a4f8924c822404c"
-  integrity sha512-ekziebXBnS/7V6xk8sBfLSSD6YZuy6P29igBtR6OL/tswKdxOV+Yqq0nzICMguVYtGRZYUCGpfGV8J9Za2iBdw==
+"@babel/register@^7.12.13":
+  version "7.12.13"
+  resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.12.13.tgz#e9cb57618264f2944634da941ba9755088ef9ec5"
+  integrity sha512-fnCeRXj970S9seY+973oPALQg61TRvAaW0nRDe1f4ytKqM3fZgsNXewTZWmqZedg74LFIRpg/11dsrPZZvYs2g==
   dependencies:
-    core-js "^3.0.0"
     find-cache-dir "^2.0.0"
-    lodash "^4.17.11"
-    mkdirp "^0.5.1"
+    lodash "^4.17.19"
+    make-dir "^2.1.0"
     pirates "^4.0.0"
-    source-map-support "^0.5.9"
+    source-map-support "^0.5.16"
 
 "@babel/template@^7.1.0", "@babel/template@^7.2.2":
   version "7.4.0"
@@ -1689,6 +1682,11 @@ commander@^2.8.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
+commander@^4.0.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
+  integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
+
 common-tags@^1.4.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
@@ -1818,10 +1816,15 @@ core-js@3.0.1, core-js@^3.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.0.1.tgz#1343182634298f7f38622f95e73f54e48ddf4738"
   integrity sha512-sco40rF+2KlE0ROMvydjkrVMMG1vYilP2ALoRXcYR4obqbYIuV3Bg+51GEDW+HF8n7NRA+iaA4qD0nD9lo9mew==
 
-core-js@^2.4.0, core-js@^2.6.5:
+core-js@^2.4.0:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
   integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
+
+core-js@^3.2.1:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.3.tgz#c21906e1f14f3689f93abcc6e26883550dd92dd0"
+  integrity sha512-KPYXeVZYemC2TkNEkX/01I+7yd+nX3KddKwZ1Ww7SKWdI2wQprSgLmrTddT8nw92AjEklTsPBoSdQBhbI1bQ6Q==
 
 core-util-is@~1.0.0:
   version "1.0.2"
@@ -3504,10 +3507,15 @@ lodash.unescape@4.0.1:
   resolved "https://registry.yarnpkg.com/lodash.unescape/-/lodash.unescape-4.0.1.tgz#bf2249886ce514cda112fae9218cdc065211fc9c"
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
-lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
+lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.19:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 log-symbols@2.2.0:
   version "2.2.0"
@@ -3568,7 +3576,7 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
-make-dir@^2.0.0:
+make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
   integrity sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==
@@ -3823,6 +3831,14 @@ node-environment-flags@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/node-environment-flags/-/node-environment-flags-1.0.5.tgz#fa930275f5bf5dae188d6192b24b4c8bbac3d76a"
   integrity sha512-VNYPRfGfmZLx0Ye20jWzHUjyTW/c+6Wq+iLhDzUI4XmhrDd9l/FozXV3F2xOaXjvp0co0+v1YSR3CMP6g+VvLQ==
+  dependencies:
+    object.getownpropertydescriptors "^2.0.3"
+    semver "^5.7.0"
+
+node-environment-flags@^1.0.5:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/node-environment-flags/-/node-environment-flags-1.0.6.tgz#a30ac13621f6f7d674260a54dede048c3982c088"
+  integrity sha512-5Evy2epuL+6TM0lCQGpFIj6KwiEsGh1SrHUhTbNX+sLbBtjidPZFAnVK9y5yU1+h//RitLbRHTIMyxQPtxMdHw==
   dependencies:
     object.getownpropertydescriptors "^2.0.3"
     semver "^5.7.0"
@@ -4562,10 +4578,10 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
-regenerator-runtime@^0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
-  integrity sha512-S/TQAZJO+D3m9xeN1WTI8dLKBBiRgXBlTJvbWjCThHWZj9EvHK70Ff50/tYj2J/fvBY6JtFVwRuazHN2E7M9BA==
+regenerator-runtime@^0.13.4:
+  version "0.13.7"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
+  integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
 
 regenerator-transform@^0.13.4:
   version "0.13.4"
@@ -4989,6 +5005,14 @@ source-map-resolve@^0.5.0:
     resolve-url "^0.2.1"
     source-map-url "^0.4.0"
     urix "^0.1.0"
+
+source-map-support@^0.5.16:
+  version "0.5.19"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
+  integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
 
 source-map-support@^0.5.9:
   version "0.5.12"
